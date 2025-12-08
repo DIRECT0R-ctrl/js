@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>training</title>
+  </head>
+  <body>
+    <div class="app">
+      <input  type="text" id="itemInput" placeholder="new element">
+      <button id="addBtn">add</button>
+      <ul id="itemList"></ul>
+    </div>
+  </body>
+
+  <script>
+    function getEls() {
+      return {
+        itemInput: document.getElementById('itemInput'),
+        addBtn: document.getElementById('addBtn'), 
+        itemList: document.getElementById('itemList')
+      };
+    };
+
+    const elements = getEls();
+
+    elements.addBtn.addEventListener('click', () => {
+      const value = elements.itemInput.value.trim();
+
+      if (value === '') {
+        return;
+      };
+
+      const li = document.createElement('li');
+      // put text inside the li
+      li.textContent = value;
+
+      elements.itemList.appendChild(li);
+
+      elements.itemInput.value = '';
+    });
+  </script>
+</html>
