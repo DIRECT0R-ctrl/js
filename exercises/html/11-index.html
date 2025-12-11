@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Validation</title>
+  </head>
+
+  <body>
+     <form id="userForm">
+
+        <input type="text" id="name" placeholder="Nom">
+
+        <span id="nameError" class="error"></span>
+
+        <input type="email" id="email" placeholder="Email">
+
+        <span id="emailError" class="error"></span>
+
+        <button type="submit">Valider</button>
+
+    </form>
+  
+  <script>
+    function  getEls() {
+      return {
+        name:  document.getElementById('name'),
+        userForm: document.getElementById('userForm'),
+        nameError: document.getElementById('nameError'),
+        email: document.getElementById('email'),
+        emailError: document.getElementById('emailError'),
+        submit: document.getElementById('submit')
+
+      };
+    }
+
+    const  elements = getEls();
+    
+    elements.submit.AddEventListener('submit', (event) => {
+      event.preventDefault();
+
+      let nameValue  = elements.name.value.trim();
+      if(!nameValue) {
+        elements.nameError.textContent = 'Name is Required';
+      } else {
+        elements.nameError.textContent = '';
+      };
+    
+    });
+  </script>
+
+  </body>

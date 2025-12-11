@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Compteur interactif</title>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <div id="counter">
+
+          <button id="decrement">-</button>
+
+              <span id="count">0</span>
+
+                  <button id="increment">+</button>
+
+                      <button id="reset">Reset</button>
+
+    </div>
+
+    <script>
+      function getEls() {
+        return {
+          decrement: document.getElementById('decrement'),
+          increment: document.getElementById('increment'),
+          reset: document.getElementById('reset'),
+          count: document.getElementById('count')
+        };
+      };
+
+      const elements = getEls();
+      let current = 0;
+
+      elements.increment.addEventListener('click', () => {
+        current++;
+        render();
+      });
+
+      elements.decrement.addEventListener('click', () => {  
+        if (current > 0)
+        {
+        current--;
+        render();
+        };
+      });
+      
+      elements.reset.addEventlistener('click', () => {
+        current = 0;
+        render();
+      });
+        
+      function render() {
+        elements.count.textContent = current;
+
+        if (current > 10)
+        {
+          elements.count.style.color = 'red';
+        } else {
+          element.count.style.color = 'black';
+        }
+
+      }
+    </script>
+  </body>
+</html>
