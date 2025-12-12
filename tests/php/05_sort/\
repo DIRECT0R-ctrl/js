@@ -1,0 +1,14 @@
+<?php
+$za = array();
+$za["name"] = "aymane";
+$za["course"] = "wa4e";
+$za["topic"] = "PHP";
+
+echo("<pre>");
+print_r($za);
+
+sort($za);
+echo("</pre>");
+print_r($za);
+
+?>
