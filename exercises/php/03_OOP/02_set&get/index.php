@@ -19,12 +19,24 @@ class User {
 	{
 		return $this->email;
 	}
+
+	public function setEmail($email)
+	{
+		if(strpos($email, '@') > -1)
+		{
+			$this->email = $email;
+		}
+	}
 }
 
 
 $userOne = new User('aymane', 'laksimi@proton.me');
-$userONe = new User('luigi', 'lui@thenetninja@gmail.com');
+$userTow = new User('luigi', 'lui@thenetninja@gmail.com');
 
 
-echo $userone->addFriend;
+echo $userOne->addFriend() . '<br>';
+echo $userOne->getEmail() . '<br>';
+
+$userOne->setEmail('dominantVortex@proton.me');
+echo $userOne->getEmail();
 ?>
