@@ -16,5 +16,5 @@ $products = array(
 		'clips' => "paperclips")
 );
 
-echo $products["pens"]["marker"];
+var_dump($products["paper"]["copier"]);
 ?>

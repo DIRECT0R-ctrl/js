@@ -10,6 +10,6 @@ sort($ar) - Sorts the array values (loses key).
 
 Ksort($ar) - sorts the array by key .
 
-asort($ar) - sorts array by value, keeping key association
+asort($ar) - sorts array by value, keeping key association 
 
 shuffle($ar)  - shuffles the array into random order.

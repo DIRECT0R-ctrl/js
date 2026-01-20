@@ -8,7 +8,7 @@ class Session{
 }
 
 
-$_SESSION['user_id'] = 42;
+$_SESSION['user_id'] = /*null*/ 42;
 
 $session = new Session();
 $session->get('user_id', 0);
